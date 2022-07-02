@@ -18,7 +18,7 @@ public class SearchFragment extends Fragment {
 
     FragmentSearchBinding binding;
 
-    private static final String MOVIE_KEY = "movie_key";
+    public static final String MOVIE_KEY = "movie_key";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
