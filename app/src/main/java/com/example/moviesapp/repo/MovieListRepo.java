@@ -35,7 +35,7 @@ public class MovieListRepo {
     }
 
 
-    interface MovieRepoCallback {
+    public interface MovieRepoCallback {
         void onSuccess(Response<MovieResponse> response);
         void onFailed(Throwable t);
     }
