@@ -16,9 +16,9 @@ public class MovieListRepo {
         apiService = RetrofitInstance.getInstance().create(ApiService.class);
     }
 
-    public void requestMovieList(String movieName, MovieRepoCallback callback) {
+    public void requestMovieList(String apikey, String movieName, MovieRepoCallback callback) {
 
-        Call<MovieResponse> call = apiService.getMovieBySearch("",movieName);
+        Call<MovieResponse> call = apiService.getMovieBySearch(apikey,movieName);
 
         call.enqueue(new Callback<MovieResponse>() {
             @Override
