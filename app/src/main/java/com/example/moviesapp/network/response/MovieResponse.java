@@ -1,4 +1,4 @@
-package com.example.moviesapp.network;
+package com.example.moviesapp.network.response;
 
 import com.example.moviesapp.model.Movie;
 import com.google.gson.annotations.SerializedName;
