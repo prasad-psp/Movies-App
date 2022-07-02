@@ -1,4 +1,4 @@
-package com.example.moviesapp;
+package com.example.moviesapp.view;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.moviesapp.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MovieListFragment#newInstance} factory method to
+ * Use the {@link SearchFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MovieListFragment extends Fragment {
+public class SearchFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class MovieListFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public MovieListFragment() {
+    public SearchFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class MovieListFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MovieListFragment.
+     * @return A new instance of fragment SearchFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MovieListFragment newInstance(String param1, String param2) {
-        MovieListFragment fragment = new MovieListFragment();
+    public static SearchFragment newInstance(String param1, String param2) {
+        SearchFragment fragment = new SearchFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class MovieListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie_list, container, false);
+        return inflater.inflate(R.layout.fragment_search, container, false);
     }
 }
