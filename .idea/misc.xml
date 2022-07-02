@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Projects/Pending/Personal/Movies App/app/src/main/res/layout/activity_main.xml" value="0.35" />
+        <entry key="..\:/Android Projects/Pending/Personal/Movies App/app/src/main/res/layout/fragment_movie_details.xml" value="0.1962962962962963" />
+        <entry key="..\:/Android Projects/Pending/Personal/Movies App/app/src/main/res/layout/fragment_movie_list.xml" value="0.3651041666666667" />
         <entry key="..\:/Android Projects/Pending/Personal/Movies App/app/src/main/res/layout/fragment_search.xml" value="0.3651041666666667" />
       </map>
     </option>
