@@ -8,7 +8,7 @@ import java.util.List;
 public class MovieResponse {
 
     @SerializedName("Search")
-    private List<Movie> search = null;
+    private List<Movie> movieList = null;
 
     @SerializedName("totalResults")
     private String totalResults;
@@ -16,12 +16,12 @@ public class MovieResponse {
     @SerializedName("Response")
     private String response;
 
-    public List<Movie> getSearch() {
-        return search;
+    public List<Movie> getMovieList() {
+        return movieList;
     }
 
-    public void setSearch(List<Movie> search) {
-        this.search = search;
+    public void setMovieList(List<Movie> search) {
+        this.movieList = search;
     }
 
     public String getTotalResults() {
