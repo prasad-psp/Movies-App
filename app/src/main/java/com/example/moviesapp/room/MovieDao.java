@@ -11,7 +11,7 @@ import com.example.moviesapp.model.MovieEntity;
 public interface MovieDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void addMovie(MovieEntity movie);
+    long addMovie(MovieEntity movie);
 
     @Query("SELECT * FROM movie ORDER BY id DESC")
     LiveData<MovieEntity> getMovieList();
