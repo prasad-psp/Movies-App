@@ -72,9 +72,11 @@
 
     <TextView
         android:id="@+id/txtMovieName"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgSave"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
@@ -93,5 +95,19 @@
         android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/imgSave"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="320dp"
+        android:src="@drawable/icon_already_saved"
+        app:tint="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/txtMovieName"
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="TODO" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
