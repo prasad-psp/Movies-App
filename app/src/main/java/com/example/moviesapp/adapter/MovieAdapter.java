@@ -38,6 +38,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public void clearData() {
         if(list.size() > 0) {
             list.clear();
+            notifyDataSetChanged();
         }
     }
 
