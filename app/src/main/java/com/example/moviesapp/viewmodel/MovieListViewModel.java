@@ -1,5 +1,6 @@
 package com.example.moviesapp.viewmodel;
 
+import android.os.Bundle;
 import android.view.View;
 
 import androidx.lifecycle.LiveData;
@@ -43,9 +44,18 @@ public class MovieListViewModel extends ViewModel {
         return errorLiveData;
     }
 
-    public void getMovieList(String movieName) {
+    public void getMovieList(Bundle bundle) {
         setProgressVisible(true);
 
+        String movieName = getMovieNameFromIntent(bundle);
+
+        if(movieName.isEmpty()) {
+            errorLiveData.setValue("Movie name is empty");
+            setProgressVisible(false);
+            return;
+        }
+
+        // request movie list data
         repo.requestMovieList("enter_your_omdbapi_apikey", movieName, new MovieListRepo.MovieRepoCallback() {
             @Override
             public void onSuccess(Response<MovieResponse> response) {
@@ -77,6 +87,14 @@ public class MovieListViewModel extends ViewModel {
             progressbarLiveData.setValue(View.VISIBLE);
         } else {
             progressbarLiveData.setValue(View.GONE);
+        }
+    }
+
+    private String getMovieNameFromIntent(Bundle bundle) {
+        if(bundle != null) {
+            return bundle.getString("movie_key");
+        } else {
+            return "";
         }
     }
 }
