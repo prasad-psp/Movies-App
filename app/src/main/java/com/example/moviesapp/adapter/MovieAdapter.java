@@ -67,7 +67,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         holder.rootLayout.setOnClickListener(view -> {
             if(movie != null) {
                 if(onItemClickListener != null) {
-                    onItemClickListener.onItemClicked(movie);
+                    onItemClickListener.onItemClicked(holder.rootLayout, movie);
                 }
             }
         });
@@ -79,7 +79,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     }
 
     public interface OnItemClickListener {
-        void onItemClicked(Movie movie);
+        void onItemClicked(View view, Movie movie);
     }
 
     static class MovieViewHolder extends RecyclerView.ViewHolder {
