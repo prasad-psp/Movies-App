@@ -1,5 +1,6 @@
 package com.example.moviesapp.viewmodel;
 
+import static com.example.moviesapp.viewmodel.MovieListViewModel.MOVIE_ID_KEY;
 import static com.example.moviesapp.viewmodel.MovieListViewModel.MOVIE_POSTER_KEY;
 import static com.example.moviesapp.viewmodel.MovieListViewModel.MOVIE_TITLE_KEY;
 import static com.example.moviesapp.viewmodel.MovieListViewModel.MOVIE_TYPE_KEY;
@@ -66,6 +67,13 @@ public class MovieDetailsViewModel extends ViewModel {
                 movieSaveStatusLiveData.setValue(true);
             }
         });
+    }
+
+    public String getMovieId(Bundle bundle) {
+        if(bundle != null) {
+            return bundle.getString(MOVIE_ID_KEY);
+        }
+        return "";
     }
 
     public String getTitle(Bundle bundle) {
