@@ -1,5 +1,7 @@
 package com.example.moviesapp.viewmodel;
 
+import static com.example.moviesapp.view.SearchFragment.MOVIE_KEY;
+
 import android.os.Bundle;
 import android.view.View;
 
@@ -92,7 +94,7 @@ public class MovieListViewModel extends ViewModel {
 
     private String getMovieNameFromIntent(Bundle bundle) {
         if(bundle != null) {
-            return bundle.getString("movie_key");
+            return bundle.getString(MOVIE_KEY);
         } else {
             return "";
         }
