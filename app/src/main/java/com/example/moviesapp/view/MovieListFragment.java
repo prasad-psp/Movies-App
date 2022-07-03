@@ -15,10 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.moviesapp.R;
 import com.example.moviesapp.adapter.MovieAdapter;
 import com.example.moviesapp.databinding.FragmentMovieListBinding;
-import com.example.moviesapp.databinding.MovieListItemBinding;
 import com.example.moviesapp.model.Movie;
 import com.example.moviesapp.viewmodel.MovieListViewModel;
 
@@ -31,12 +29,6 @@ public class MovieListFragment extends Fragment {
     private MovieAdapter adapter;
 
     private MovieListViewModel viewModel;
-
-    public static final String MOVIE_TITLE_KEY = "movie_title";
-    public static final String MOVIE_POSTER_KEY = "movie_poster";
-    public static final String MOVIE_ID_KEY = "movie_id";
-    public static final String MOVIE_TYPE_KEY = "movie_type";
-    public static final String MOVIE_YEAR_KEY = "movie_year";
 
 
     @Override
@@ -55,13 +47,7 @@ public class MovieListFragment extends Fragment {
             @Override
             public void onItemClicked(View view, Movie movie) {
                 // movie list item clicked
-                Bundle bundle = new Bundle();
-                bundle.putString(MOVIE_TITLE_KEY, movie.getTitle());
-                bundle.putString(MOVIE_POSTER_KEY, movie.getPoster());
-                bundle.putString(MOVIE_ID_KEY, movie.getImdbID());
-                bundle.putString(MOVIE_TYPE_KEY, movie.getType());
-                bundle.putString(MOVIE_YEAR_KEY, movie.getYear());
-                Navigation.findNavController(view).navigate(R.id.action_movieListFragment_to_movieDetailsFragment, bundle);
+                viewModel.navigateToMovieDetailsScreen(view, movie);
             }
         });
 

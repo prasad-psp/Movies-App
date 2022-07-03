@@ -1,6 +1,7 @@
 package com.example.moviesapp.viewmodel;
 
-import static com.example.moviesapp.view.SearchFragment.MOVIE_KEY;
+
+import static com.example.moviesapp.viewmodel.SearchViewModel.MOVIE_KEY;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +9,9 @@ import android.view.View;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.navigation.Navigation;
 
+import com.example.moviesapp.R;
 import com.example.moviesapp.model.Movie;
 import com.example.moviesapp.network.response.MovieResponse;
 import com.example.moviesapp.repo.MovieListRepo;
@@ -26,6 +29,12 @@ public class MovieListViewModel extends ViewModel {
     private final MutableLiveData<Integer> progressbarLiveData;
 
     private final MutableLiveData<String> errorLiveData;
+
+    public static final String MOVIE_TITLE_KEY = "movie_title";
+    public static final String MOVIE_POSTER_KEY = "movie_poster";
+    public static final String MOVIE_ID_KEY = "movie_id";
+    public static final String MOVIE_TYPE_KEY = "movie_type";
+    public static final String MOVIE_YEAR_KEY = "movie_year";
 
     public MovieListViewModel() {
         repo = new MovieListRepo();
@@ -82,6 +91,16 @@ public class MovieListViewModel extends ViewModel {
                 setProgressVisible(false);
             }
         });
+    }
+
+    public void navigateToMovieDetailsScreen(View view, Movie movie) {
+        Bundle bundle = new Bundle();
+        bundle.putString(MOVIE_TITLE_KEY, movie.getTitle());
+        bundle.putString(MOVIE_POSTER_KEY, movie.getPoster());
+        bundle.putString(MOVIE_ID_KEY, movie.getImdbID());
+        bundle.putString(MOVIE_TYPE_KEY, movie.getType());
+        bundle.putString(MOVIE_YEAR_KEY, movie.getYear());
+        Navigation.findNavController(view).navigate(R.id.action_movieListFragment_to_movieDetailsFragment, bundle);
     }
 
     private void setProgressVisible(boolean visible) {
