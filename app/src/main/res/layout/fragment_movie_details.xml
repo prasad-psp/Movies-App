@@ -102,7 +102,7 @@
         android:layout_height="20dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="320dp"
-        android:src="@drawable/icon_already_saved"
+        android:src="@drawable/icon_save"
         app:tint="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
