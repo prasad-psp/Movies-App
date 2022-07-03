@@ -74,12 +74,14 @@ public class MovieListViewModel extends ViewModel {
                     MovieResponse movieResponse = response.body();
                     ArrayList<Movie> list = (ArrayList<Movie>) movieResponse.getMovieList();
 
-                    if(list.size() > 0) {
+                    if(list != null && list.size() > 0) {
                         // data found
                         movieListLiveData.setValue(list);
+                        errorLiveData.setValue("");
+                    } else {
+                        errorLiveData.setValue("Data not found please try again later");
                     }
 
-                    errorLiveData.setValue("");
                     setProgressVisible(false);
                 }
             }
@@ -107,7 +109,7 @@ public class MovieListViewModel extends ViewModel {
         if(visible) {
             progressbarLiveData.setValue(View.VISIBLE);
         } else {
-            progressbarLiveData.setValue(View.GONE);
+            progressbarLiveData.setValue(View.INVISIBLE);
         }
     }
 
